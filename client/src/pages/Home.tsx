@@ -15,8 +15,8 @@ import {
 } from "lucide-react";
 
 const WHATSAPP = "https://wa.me/5544991366360";
-const heroImage = "/manus-storage/like-move-hero_aa795088.jpg";
-const mirrorImage = "/public/media/Espelho.jpeg";
+const heroImage = "/media/like-move-hero_aa795088.jpg";
+const mirrorImage = "/media/like-move-mirror_9b7e18e5.jpg";
 
 const whatsappMessage = (message: string) => `${WHATSAPP}?text=${encodeURIComponent(message)}`;
 
@@ -228,7 +228,7 @@ export default function Home() {
 
       <section className="final-cta section-pad"><div className="container final-cta-inner"><div className="section-kicker">07 / Vamos conversar</div><h2>Seu evento já tem data.<br /><em>Agora falta o momento.</em></h2><p>Consulte a disponibilidade da sua data e descubra a combinação de atrações que faz sentido para você.</p><a className="button button-primary large-button" href={whatsappMessage("Olá, quero consultar a disponibilidade da Like Move 360 para meu evento.")} target="_blank" rel="noreferrer"><MessageCircle size={18} /> Consultar disponibilidade</a><span className="final-contact">(44) 99136-6360</span></div></section>
 
-      <footer className="site-footer"><div className="container footer-top"><a href="#top" className="brand footer-brand"><img className="brand-logo" src="/logo-mark.png" alt="Like Move 360" /></a><p>Atrações interativas para eventos em Maringá, Londrina e região.</p><a className="instagram-link" href="https://www.instagram.com/likemove360/" target="_blank" rel="noreferrer"><Instagram size={17} /> @likemove360</a></div><div className="container footer-bottom"><span>© 2026 Like Move 360. Todos os direitos reservados.</span><span>Feito para criar lembranças.</span></div></footer>
+      <footer className="site-footer"><div className="container footer-top"><a href="#top" className="brand footer-brand"><img className="brand-logo" src="/media/logo-sem-fundo-branca.png" alt="Like Move 360" /></a><p>Atrações interativas para eventos em Maringá, Londrina e região.</p><a className="instagram-link" href="https://www.instagram.com/likemove360/" target="_blank" rel="noreferrer"><Instagram size={17} /> @likemove360</a></div><div className="container footer-bottom"><span>© 2026 Like Move 360. Todos os direitos reservados.</span><span>Feito para criar lembranças.</span></div></footer>
       <a className="floating-whatsapp" href={whatsappMessage("Olá, quero falar com a Like Move 360.")} target="_blank" rel="noreferrer" aria-label="Falar com a Like Move 360 pelo WhatsApp"><MessageCircle size={23} /></a>
     </main>
   );
