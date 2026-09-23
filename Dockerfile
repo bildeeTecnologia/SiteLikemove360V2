@@ -1,23 +1,19 @@
 # --- Dependencies (full, for build) ---
 FROM node:20-alpine AS deps
 WORKDIR /app
-RUN corepack enable
-COPY package.json pnpm-lock.yaml ./
-COPY patches ./patches
-RUN pnpm install --frozen-lockfile
+COPY package.json package-lock.json ./
+RUN npm ci
 
 # --- Build client + server bundle ---
 FROM deps AS build
 COPY . .
-RUN pnpm build
+RUN npm run build
 
 # --- Production-only dependencies ---
 FROM node:20-alpine AS prod-deps
 WORKDIR /app
-RUN corepack enable
-COPY package.json pnpm-lock.yaml ./
-COPY patches ./patches
-RUN pnpm install --frozen-lockfile --prod
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
 
 # --- Final runtime image ---
 FROM node:20-alpine AS runner
