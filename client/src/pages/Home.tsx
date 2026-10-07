@@ -95,7 +95,7 @@ export default function Home() {
       <header className="site-header">
         <div className="container header-inner">
           <a href="#top" className="brand" onClick={closeMenu} aria-label="Like Move 360 — início">
-            <img className="brand-logo" src="/logo-mark.png" alt="Like Move 360" />
+            <img className="brand-logo" src="/logo-mark.png" alt="Like Move 360" width={185} height={72} />
           </a>
 
           <nav className={`main-nav ${menuOpen ? "is-open" : ""}`} aria-label="Navegação principal">
@@ -184,7 +184,7 @@ export default function Home() {
 
       <section className="feature section-pad" id="para-seu-evento">
         <div className="container feature-grid">
-          <div className="feature-image-wrap"><img src={mirrorImage} alt="Convidados usando o Espelho Mágico Fotográfico em um evento" className="feature-image" /><span className="image-caption">A lembrança acontece na hora.</span></div>
+          <div className="feature-image-wrap"><img src={mirrorImage} alt="Convidados usando o Espelho Mágico Fotográfico em um evento" className="feature-image" width={2176} height={1632} loading="lazy" decoding="async" /><span className="image-caption">A lembrança acontece na hora.</span></div>
           <div className="feature-copy"><div className="section-kicker">03 / O detalhe que fica</div><h2>Foto impressa.<br /><em>Download sem internet.</em></h2><p>Com o Espelho Mágico, seus convidados saem com a foto nas mãos e também podem baixar a versão digital em qualidade profissional.</p><p className="muted-copy">Nosso sistema cria uma rede Wi-Fi própria no local. Assim, a experiência continua fluida mesmo quando a internet da festa não dá conta.</p><ul className="check-list"><li><Check size={17} /> Impressão na hora</li><li><Check size={17} /> Arquivo digital profissional</li><li><Check size={17} /> Wi-Fi próprio no evento</li></ul><a className="button button-dark" href={whatsappMessage("Olá, quero um orçamento do Espelho Mágico para meu evento.")} target="_blank" rel="noreferrer">Quero essa experiência <ArrowUpRight size={17} /></a></div>
         </div>
       </section>
@@ -192,7 +192,7 @@ export default function Home() {
       <section className="gallery-section section-pad" id="galeria">
         <div className="container">
           <div className="section-heading split-heading"><div><div className="section-kicker">04 / Acontece de verdade</div><h2>Olha quem já<br /><em>entrou na brincadeira.</em></h2></div><p>Registros reais de pessoas reais. Porque a melhor propaganda para uma experiência é ver a reação de quem viveu.</p></div>
-          <div className="gallery-grid">{galleryItems.map((item, index) => <figure className={`gallery-item gallery-${index + 1}`} key={item.src}>{item.type === "video" ? <video src={item.src} controls preload="metadata" playsInline aria-label={item.alt} /> : <img src={item.src} alt={item.alt} loading="lazy" />}<figcaption><span>{item.label}</span>{item.type === "video" && <b>PLAY</b>}</figcaption></figure>)}</div>
+          <div className="gallery-grid">{galleryItems.map((item, index) => <figure className={`gallery-item gallery-${index + 1}`} key={item.src}>{item.type === "video" ? <video src={item.src} controls preload="none" playsInline width={1080} height={1920} aria-label={item.alt} /> : <img src={item.src} alt={item.alt} width={3456} height={2304} loading="lazy" decoding="async" />}<figcaption><span>{item.label}</span>{item.type === "video" && <b>PLAY</b>}</figcaption></figure>)}</div>
           <div className="gallery-footer"><span>Fotos e vídeos de eventos atendidos pela Like Move 360.</span><a className="text-link" href="https://www.instagram.com/likemove360/" target="_blank" rel="noreferrer">Ver mais no Instagram <ArrowUpRight size={16} /></a></div>
         </div>
       </section>
@@ -228,7 +228,7 @@ export default function Home() {
 
       <section className="final-cta section-pad"><div className="container final-cta-inner"><div className="section-kicker">07 / Vamos conversar</div><h2>Seu evento já tem data.<br /><em>Agora falta o momento.</em></h2><p>Consulte a disponibilidade da sua data e descubra a combinação de atrações que faz sentido para você.</p><a className="button button-primary large-button" href={whatsappMessage("Olá, quero consultar a disponibilidade da Like Move 360 para meu evento.")} target="_blank" rel="noreferrer"><MessageCircle size={18} /> Consultar disponibilidade</a><span className="final-contact">(44) 99136-6360</span></div></section>
 
-      <footer className="site-footer"><div className="container footer-top"><a href="#top" className="brand footer-brand"><img className="brand-logo" src="/media/logo-sem-fundo-branca.png" alt="Like Move 360" /></a><p>Atrações interativas para eventos em Maringá, Londrina e região.</p><a className="instagram-link" href="https://www.instagram.com/likemove360/" target="_blank" rel="noreferrer"><Instagram size={17} /> @likemove360</a></div><div className="container footer-bottom"><span>© 2026 Like Move 360. Todos os direitos reservados.</span><span>Feito para criar lembranças.</span></div></footer>
+      <footer className="site-footer"><div className="container footer-top"><a href="#top" className="brand footer-brand"><img className="brand-logo" src="/media/logo-sem-fundo-branca.png" alt="Like Move 360" width={1528} height={553} /></a><p>Atrações interativas para eventos em Maringá, Londrina e região.</p><a className="instagram-link" href="https://www.instagram.com/likemove360/" target="_blank" rel="noreferrer"><Instagram size={17} /> @likemove360</a></div><div className="container footer-bottom"><span>© 2026 Like Move 360. Todos os direitos reservados.</span><span>Feito para criar lembranças.</span></div></footer>
       <a className="floating-whatsapp" href={whatsappMessage("Olá, quero falar com a Like Move 360.")} target="_blank" rel="noreferrer" aria-label="Falar com a Like Move 360 pelo WhatsApp"><MessageCircle size={23} /></a>
     </main>
   );

@@ -65,6 +65,54 @@ export const routeSeo: Record<string, RouteSeo> = {
       serviceType: "Atração com Robô Bumblebee para eventos",
     },
   },
+  "/plataforma-360-maringa": {
+    title: "Aluguel de Plataforma 360 em Maringá | Like Move 360",
+    description: "Aluguel de Plataforma 360 e Max360 para casamentos, 15 anos, formaturas e eventos corporativos em Maringá. Consulte sua data.",
+    path: "/plataforma-360-maringa",
+    type: "service",
+    location: "Maringá",
+    service: { name: "Plataforma 360 em Maringá", description: "Plataforma 360 e Max360 para criar vídeos dinâmicos com os convidados em eventos em Maringá.", serviceType: "Aluguel de Plataforma 360 para eventos" },
+  },
+  "/plataforma-360-londrina": {
+    title: "Aluguel de Plataforma 360 em Londrina | Like Move 360",
+    description: "Plataforma 360 e Max360 para casamentos, 15 anos, formaturas e eventos corporativos em Londrina. Peça uma proposta.",
+    path: "/plataforma-360-londrina",
+    type: "service",
+    location: "Londrina",
+    service: { name: "Plataforma 360 em Londrina", description: "Plataforma 360 e Max360 para criar vídeos dinâmicos com os convidados em eventos em Londrina.", serviceType: "Aluguel de Plataforma 360 para eventos" },
+  },
+  "/espelho-magico-maringa": {
+    title: "Espelho Mágico em Maringá com Foto Impressa | Like Move 360",
+    description: "Aluguel de Espelho Mágico em Maringá para casamentos, 15 anos e eventos, com fotos impressas na hora e arquivo digital.",
+    path: "/espelho-magico-maringa",
+    type: "service",
+    location: "Maringá",
+    service: { name: "Espelho Mágico em Maringá", description: "Espelho Mágico com fotos impressas na hora e arquivo digital para eventos em Maringá.", serviceType: "Aluguel de Espelho Mágico para eventos" },
+  },
+  "/espelho-magico-londrina": {
+    title: "Espelho Mágico em Londrina com Foto Impressa | Like Move 360",
+    description: "Espelho Mágico para eventos em Londrina, com fotos impressas na hora e download digital para casamentos, 15 anos e aniversários.",
+    path: "/espelho-magico-londrina",
+    type: "service",
+    location: "Londrina",
+    service: { name: "Espelho Mágico em Londrina", description: "Espelho Mágico com fotos impressas na hora e arquivo digital para eventos em Londrina.", serviceType: "Aluguel de Espelho Mágico para eventos" },
+  },
+  "/atracoes-casamento-maringa": {
+    title: "Atrações para Casamento em Maringá | Like Move 360",
+    description: "Atrações para casamento em Maringá: Plataforma 360, Espelho Mágico e Robô Bumblebee para recepção, pista e momentos especiais.",
+    path: "/atracoes-casamento-maringa",
+    type: "service",
+    location: "Maringá",
+    service: { name: "Atrações para casamento em Maringá", description: "Atrações interativas para recepção, pista e momentos especiais em casamentos em Maringá.", serviceType: "Atrações interativas para casamento" },
+  },
+  "/atracoes-15-anos-londrina": {
+    title: "Atrações para Festa de 15 Anos em Londrina | Like Move 360",
+    description: "Atrações para festa de 15 anos em Londrina: Plataforma 360, Espelho Mágico e Robô Bumblebee para criar fotos e vídeos especiais.",
+    path: "/atracoes-15-anos-londrina",
+    type: "service",
+    location: "Londrina",
+    service: { name: "Atrações para festa de 15 anos em Londrina", description: "Atrações para recepção, fotos, vídeos e momentos especiais em festas de 15 anos em Londrina.", serviceType: "Atrações interativas para festa de 15 anos" },
+  },
   "/maringa": {
     title: "Atrações para eventos em Maringá | Like Move 360",
     description:
@@ -128,11 +176,13 @@ export function buildJsonLd(seo: RouteSeo) {
       url: `${SITE_URL}${seo.path}`,
       image: seo.image || DEFAULT_IMAGE,
       provider: { "@id": localBusinessId },
-      areaServed: [
-        { "@type": "City", name: "Maringá" },
-        { "@type": "City", name: "Londrina" },
-        { "@type": "AdministrativeArea", name: "Norte e Noroeste do Paraná" },
-      ],
+      areaServed: seo.location
+        ? [{ "@type": "City", name: seo.location }]
+        : [
+            { "@type": "City", name: "Maringá" },
+            { "@type": "City", name: "Londrina" },
+            { "@type": "AdministrativeArea", name: "Norte e Noroeste do Paraná" },
+          ],
     });
   }
 

@@ -4,6 +4,7 @@ import { Router, Route, Switch } from "wouter";
 import Home from "../client/src/pages/Home";
 import ServicePage from "../client/src/pages/ServicePage";
 import LocationPage from "../client/src/pages/LocationPage";
+import LocalServicePage from "../client/src/pages/LocalServicePage";
 import NotFound from "../client/src/pages/NotFound";
 import { buildJsonLd, escapeJsonForHtml, routeSeo, SITE_URL, DEFAULT_IMAGE } from "./seo";
 
@@ -20,6 +21,12 @@ function ServerApp() {
       <Route path="/robo-bumblebee">
         <ServicePage kind="robo" />
       </Route>
+      <Route path="/plataforma-360-maringa"><LocalServicePage kind="plataformaMaringa" /></Route>
+      <Route path="/plataforma-360-londrina"><LocalServicePage kind="plataformaLondrina" /></Route>
+      <Route path="/espelho-magico-maringa"><LocalServicePage kind="espelhoMaringa" /></Route>
+      <Route path="/espelho-magico-londrina"><LocalServicePage kind="espelhoLondrina" /></Route>
+      <Route path="/atracoes-casamento-maringa"><LocalServicePage kind="casamentoMaringa" /></Route>
+      <Route path="/atracoes-15-anos-londrina"><LocalServicePage kind="quinzeLondrina" /></Route>
       <Route path="/maringa">
         <LocationPage city="maringa" />
       </Route>
