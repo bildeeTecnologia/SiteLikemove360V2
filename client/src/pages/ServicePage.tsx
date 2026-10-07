@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { ArrowLeft, ArrowUpRight, Check, MessageCircle } from "lucide-react";
 import { Link, useRoute } from "wouter";
 
 const WHATSAPP = "https://wa.me/5544991366360";
 const wa = (text: string) => `${WHATSAPP}?text=${encodeURIComponent(text)}`;
-const heroImage = "/media/like-move-hero_aa795088.jpg";
+const heroImage = "/media/like-move-hero_aa795088.webp";
 
 const data = {
   plataforma: {

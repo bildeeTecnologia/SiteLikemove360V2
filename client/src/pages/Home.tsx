@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   ArrowUpRight,
   Camera,
@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 const WHATSAPP = "https://wa.me/5544991366360";
-const heroImage = "/media/like-move-hero_aa795088.jpg";
+const heroImage = "/media/like-move-hero_aa795088.webp";
 const mirrorImage = "/media/like-move-mirror_9b7e18e5.jpg";
 
 const whatsappMessage = (message: string) => `${WHATSAPP}?text=${encodeURIComponent(message)}`;
